@@ -13,8 +13,8 @@
 # limitations under the License.
 
 # Abstruct
-PRODUCT_PACKAGES += \
-    Abstruct
+#PRODUCT_PACKAGES += \
+#    Abstruct
 
 # Camera
 PRODUCT_PACKAGES += \
@@ -36,8 +36,8 @@ PRODUCT_PACKAGES += \
     libprotobuf-cpp-full-rtti
 
 # Paranoid Packages
-PRODUCT_PACKAGES += \
-    ParanoidPapers
+#PRODUCT_PACKAGES += \
+#    ParanoidPapers
 
 # Paranoid Packages (OTA)
 ifneq ($(filter RELEASE BETA,$(AOSPA_BUILDTYPE)),)
