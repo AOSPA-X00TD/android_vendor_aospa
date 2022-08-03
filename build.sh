@@ -196,12 +196,9 @@ fi
 echo -e "${CLR_BLD_BLU}Starting compilation${CLR_RST}"
 echo -e ""
 
+# If we aren't in Jenkins, use the engineering tag
 if [ -z "${BUILD_NUMBER}" ]; then
-    if [ -z "${USER}" ]; then
-        export FILE_NAME_TAG=eng.root
-    else
-        export FILE_NAME_TAG=eng.$USER
-    fi
+    export FILE_NAME_TAG=eng.$USER
 else
     export FILE_NAME_TAG=$BUILD_NUMBER
 fi
@@ -283,7 +280,7 @@ else
 
     checkExit
 
-    mv -f $OUT/aospa_$DEVICE-ota-$FILE_NAME_TAG.zip $OUT/aospa-$AOSPA_VERSION.zip
+    mv -f $OUT/aospa_$DEVICE-ota*zip $OUT/aospa-$AOSPA_VERSION.zip
     echo "Package Complete: $OUT/aospa-$AOSPA_VERSION.zip"
 fi
 echo -e ""
