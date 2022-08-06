@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # AOSPA build helper script
-
+rm out/.lock
 # red = errors, cyan = warnings, green = confirmations, blue = informational
 # plain for generic text, bold for titles, reset flag at each end of line
 # plain blue should not be used for readability reasons - use plain cyan instead
