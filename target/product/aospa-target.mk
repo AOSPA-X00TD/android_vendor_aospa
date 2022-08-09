@@ -58,7 +58,13 @@ $(call inherit-product, vendor/aospa/target/product/properties.mk)
 $(call inherit-product, vendor/aospa/sepolicy/sepolicy.mk)
 
 # Include GMS, Modules, and Pixel features.
+ifeq ($(WITH_GMS),true)
+$(warning Building with gapps)
 $(call inherit-product, vendor/google/gms/config.mk)
+else
+$(warning Building vanilla - without gapps)
+$(warning Add export WITH_GMS=true to include gapps)
+endif
 $(call inherit-product, vendor/google/pixel/config.mk)
 
 ifneq ($(TARGET_FLATTEN_APEX), true)
